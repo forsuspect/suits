@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Prova - Elegance Suits</title>
+    <link rel="stylesheet" href="../agendamento-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="../logo.png" alt="Logo Elegance Suits" class="logo-img">
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="index.html#colecoes" class="nav-link">Coleções</a>
+                <a href="index.html#servicos" class="nav-link">Serviços</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="contato.html" class="nav-link">Contato</a>
+                <a href="agendamento.html" class="nav-link cta-button active">Agendar Prova</a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Agende sua Prova</h1>
+            <p class="hero-subtitle">Reserve um horário exclusivo para criar o terno perfeito para você</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>60 min</span>
+                    <small>Duração média</small>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Gratuito</span>
+                    <small>Sem compromisso</small>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Especialista</span>
+                    <small>Atendimento</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-grid">
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <div class="form-header">
+                        <h2>Reserve seu Horário</h2>
+                        <p>Preencha os dados abaixo para agendar sua consulta personalizada</p>
+                    </div>
+
+                    <form class="booking-form" id="booking-form">
+                        <!-- Step 1: Personal Info -->
+                        <div class="form-step active" id="step-1">
+                            <h3 class="step-title">
+                                <span class="step-number">1</span>
+                                Informações Pessoais
+                            </h3>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nome">Nome Completo *</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                    <span class="error-message" id="nome-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefone">Telefone *</label>
+                                    <input type="tel" id="telefone" name="telefone" required>
+                                    <span class="error-message" id="telefone-error"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="idade">Idade</label>
+                                <select id="idade" name="idade">
+                                    <option value="">Selecione sua faixa etária</option>
+                                    <option value="18-25">18-25 anos</option>
+                                    <option value="26-35">26-35 anos</option>
+                                    <option value="36-45">36-45 anos</option>
+                                    <option value="46-55">46-55 anos</option>
+                                    <option value="56+">56+ anos</option>
+                                </select>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary next-step" data-next="2">
+                                Próximo <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Step 2: Service Selection -->
+                        <div class="form-step" id="step-2">
+                            <h3 class="step-title">
+                                <span class="step-number">2</span>
+                                Tipo de Serviço
+                            </h3>
+                            
+                            <div class="service-options">
+                                <div class="service-option" data-service="sob-medida">
+                                    <div class="service-icon">
+                                        <i class="fas fa-cut"></i>
+                                    </div>
+                                    <h4>Terno Sob Medida</h4>
+                                    <p>Criação completa do seu terno personalizado</p>
+                                    <span class="service-duration">60-90 min</span>
+                                </div>
+                                
+                                <div class="service-option" data-service="ajustes">
+                                    <div class="service-icon">
+                                        <i class="fas fa-ruler"></i>
+                                    </div>
+                                    <h4>Ajustes</h4>
+                                    <p>Ajustes em ternos já confeccionados</p>
+                                    <span class="service-duration">30-45 min</span>
+                                </div>
+                                
+                                <div class="service-option" data-service="consultoria">
+                                    <div class="service-icon">
+                                        <i class="fas fa-palette"></i>
+                                    </div>
+                                    <h4>Consultoria de Estilo</h4>
+                                    <p>Orientação para escolha de tecidos e modelos</p>
+                                    <span class="service-duration">45-60 min</span>
+                                </div>
+                                
+                                <div class="service-option" data-service="prova">
+                                    <div class="service-icon">
+                                        <i class="fas fa-user-tie"></i>
+                                    </div>
+                                    <h4>Prova de Terno</h4>
+                                    <p>Prova e ajustes finais do seu terno</p>
+                                    <span class="service-duration">30 min</span>
+                                </div>
+                            </div>
+                            
+                            <input type="hidden" id="servico-selecionado" name="servico">
+                            <span class="error-message" id="servico-error"></span>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step" data-prev="1">
+                                    <i class="fas fa-arrow-left"></i> Anterior
+                                </button>
+                                <button type="button" class="btn btn-primary next-step" data-next="3">
+                                    Próximo <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Date & Time -->
+                        <div class="form-step" id="step-3">
+                            <h3 class="step-title">
+                                <span class="step-number">3</span>
+                                Data e Horário
+                            </h3>
+                            
+                            <div class="datetime-container">
+                                <div class="calendar-container">
+                                    <h4>Selecione a Data</h4>
+                                    <div class="calendar" id="calendar">
+                                        <div class="calendar-header">
+                                            <button type="button" class="calendar-nav" id="prev-month">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <h5 class="calendar-title" id="calendar-title"></h5>
+                                            <button type="button" class="calendar-nav" id="next-month">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                        </div>
+                                        <div class="calendar-weekdays">
+                                            <div>Dom</div>
+                                            <div>Seg</div>
+                                            <div>Ter</div>
+                                            <div>Qua</div>
+                                            <div>Qui</div>
+                                            <div>Sex</div>
+                                            <div>Sáb</div>
+                                        </div>
+                                        <div class="calendar-days" id="calendar-days"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="time-container">
+                                    <h4>Horários Disponíveis</h4>
+                                    <div class="time-slots" id="time-slots">
+                                        <p class="no-date-selected">Selecione uma data para ver os horários disponíveis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <input type="hidden" id="data-selecionada" name="data">
+                            <input type="hidden" id="horario-selecionado" name="horario">
+                            <span class="error-message" id="datetime-error"></span>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step" data-prev="2">
+                                    <i class="fas fa-arrow-left"></i> Anterior
+                                </button>
+                                <button type="button" class="btn btn-primary next-step" data-next="4">
+                                    Próximo <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Additional Info -->
+                        <div class="form-step" id="step-4">
+                            <h3 class="step-title">
+                                <span class="step-number">4</span>
+                                Informações Adicionais
+                            </h3>
+                            
+                            <div class="form-group">
+                                <label for="ocasiao">Ocasião de Uso</label>
+                                <select id="ocasiao" name="ocasiao">
+                                    <option value="">Selecione a ocasião</option>
+                                    <option value="casamento">Casamento</option>
+                                    <option value="formatura">Formatura</option>
+                                    <option value="trabalho">Trabalho/Corporativo</option>
+                                    <option value="festa">Festa/Evento Social</option>
+                                    <option value="outros">Outros</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="orcamento">Orçamento Aproximado</label>
+                                <select id="orcamento" name="orcamento">
+                                    <option value="">Selecione sua faixa de orçamento</option>
+                                    <option value="ate-1000">Até R$ 1.000</option>
+                                    <option value="1000-2000">R$ 1.000 - R$ 2.000</option>
+                                    <option value="2000-3000">R$ 2.000 - R$ 3.000</option>
+                                    <option value="3000-5000">R$ 3.000 - R$ 5.000</option>
+                                    <option value="acima-5000">Acima de R$ 5.000</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="observacoes">Observações</label>
+                                <textarea id="observacoes" name="observacoes" rows="4" placeholder="Conte-nos mais sobre suas preferências, medidas especiais ou qualquer informação relevante..."></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="whatsapp-lembrete" name="whatsapp-lembrete" checked>
+                                    <span class="checkmark"></span>
+                                    Receber lembrete por WhatsApp
+                                </label>
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step" data-prev="3">
+                                    <i class="fas fa-arrow-left"></i> Anterior
+                                </button>
+                                <button type="button" class="btn btn-primary next-step" data-next="5">
+                                    Revisar <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Review -->
+                        <div class="form-step" id="step-5">
+                            <h3 class="step-title">
+                                <span class="step-number">5</span>
+                                Revisar Agendamento
+                            </h3>
+                            
+                            <div class="booking-summary" id="booking-summary">
+                                <!-- Summary will be populated by JavaScript -->
+                            </div>
+                            
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step" data-prev="4">
+                                    <i class="fas fa-arrow-left"></i> Editar
+                                </button>
+                                <button type="submit" class="btn btn-primary" id="submit-booking">
+                                    <span class="btn-text">
+                                        <i class="fas fa-calendar-check"></i> Confirmar Agendamento
+                                    </span>
+                                    <span class="btn-loading" style="display: none;">
+                                        <i class="fas fa-spinner fa-spin"></i> Agendando...
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="success-message" style="display: none;">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Agendamento Confirmado!</h3>
+                        <p>Seu horário foi reservado com sucesso. Você receberá uma confirmação por e-mail e WhatsApp.</p>
+                        <div class="success-details" id="success-details">
+                            <!-- Details will be populated by JavaScript -->
+                        </div>
+                        <div class="success-actions">
+                            <button type="button" class="btn btn-primary" onclick="window.print()">
+                                <i class="fas fa-print"></i> Imprimir Comprovante
+                            </button>
+                            <a href="../index.html" class="btn btn-secondary">
+                                <i class="fas fa-home"></i> Voltar ao Início
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Sidebar -->
+                <div class="info-sidebar">
+                    <div class="info-card">
+                        <h3>Como Funciona</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="process-number">1</div>
+                                <div class="process-content">
+                                    <h4>Agendamento</h4>
+                                    <p>Reserve seu horário online de forma rápida e fácil</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">2</div>
+                                <div class="process-content">
+                                    <h4>Consulta</h4>
+                                    <p>Atendimento personalizado com nosso especialista</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">3</div>
+                                <div class="process-content">
+                                    <h4>Medidas</h4>
+                                    <p>Tomada de medidas precisa para caimento perfeito</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="process-number">4</div>
+                                <div class="process-content">
+                                    <h4>Confecção</h4>
+                                    <p>Seu terno é confeccionado com máxima qualidade</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Informações Importantes</h3>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Chegue 10 minutos antes do horário</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shirt"></i>
+                                <span>Use roupas confortáveis para a prova</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-calendar-times"></i>
+                                <span>Cancelamento até 24h antes</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-id-card"></i>
+                                <span>Traga um documento com foto</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-parking"></i>
+                                <span>Estacionamento gratuito disponível</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card contact-card">
+                        <h3>Precisa de Ajuda?</h3>
+                        <p>Nossa equipe está pronta para atendê-lo</p>
+                        <div class="contact-options">
+                            <a href="tel:+551133334444" class="contact-option">
+                                <i class="fas fa-phone"></i>
+                                <span>(11) 3333-4444</span>
+                            </a>
+                            <a href="https://wa.me/5511999998888" class="contact-option">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>(11) 99999-8888</span>
+                            </a>
+                            <a href="mailto:agendamento@elegancesuits.com" class="contact-option">
+                                <i class="fas fa-envelope"></i>
+                                <span>agendamento@elegancesuits.com</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download-fFwacyDcjqp7QOMbADlzAQNyQ0YgYw.png" alt="Logo Elegance Suits" class="footer-logo">
+                    <p>Sua elegância é nossa especialidade. Ternos premium sob medida desde 1995.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#colecoes">Coleções</a></li>
+                        <li><a href="index.html#servicos">Serviços</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (11) 3333-4444</p>
+                        <p><i class="fas fa-envelope"></i> contato@elegancesuits.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Rua da Elegância, 123</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Suits. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../agendamento-script.js"></script>
+</body>
+</html>
